@@ -1,24 +1,24 @@
 import './style.css'
-import typescriptLogo from './typescript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.ts'
-
+import { setLogin } from './Auth/login.ts'
+import { setProfile } from './profile/profile.ts'
+const isUserActive:boolean = true
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
-  </div>
-`
+   <section>
+      <div id="main">
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+      </div>
+   </section>
+  </div>
+
+`
+if(isUserActive === true){
+  setProfile(document.querySelector<HTMLDivElement>('#main')!)
+} else if(isUserActive === false){
+  setLogin(document.querySelector<HTMLDivElement>('#main')!)
+}
+{isUserActive ?  setProfile(document.querySelector<HTMLDivElement>('#main')!)
+  :
+ setLogin(document.querySelector<HTMLDivElement>('#main')!)
+} 
+// setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
