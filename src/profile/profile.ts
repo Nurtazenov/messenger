@@ -1,14 +1,18 @@
+import './Profile.scss'
 export function setProfile(element: HTMLDivElement) {
 
       element.innerHTML = `
-    <div>
-        <fieldset>
+    <section class="main_profile">
+        <fieldset class="card">
             <legend>
                <h2>Ваш профиль </h2>
             </legend>
-            <p><img/></p>
+            <p><img src="/src/Navbar/user.webp"
             
-            <p>Имя</p>
+            /></p>
+            
+       <h2> <strong>Ваше имя</strong></h2>
+            <br/>
             <p>Почта</p>
             <hr>
             <p>Логин</p>
@@ -28,7 +32,7 @@ export function setProfile(element: HTMLDivElement) {
             <a>Выйти</a>
 
         </fieldset>
-    </div>
+    </section>
 
 `
 }

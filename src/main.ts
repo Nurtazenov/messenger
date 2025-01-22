@@ -1,9 +1,11 @@
-import './style.css'
+import './main.scss'
 import { setLogin } from './Auth/login.ts'
 import { setProfile } from './profile/profile.ts'
-const isUserActive:boolean = true
+import { setRegister } from './Auth/register.ts';
+
+const isUserActive:boolean = true;
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
+  <div class="main">
    <section>
       <div id="main">
 
@@ -15,10 +17,10 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 if(isUserActive === true){
   setProfile(document.querySelector<HTMLDivElement>('#main')!)
 } else if(isUserActive === false){
-  setLogin(document.querySelector<HTMLDivElement>('#main')!)
+  // setLogin(document.querySelector<HTMLDivElement>('#main')!)
+  setRegister(document.querySelector<HTMLDivElement>('#main')!)
 }
-{isUserActive ?  setProfile(document.querySelector<HTMLDivElement>('#main')!)
-  :
- setLogin(document.querySelector<HTMLDivElement>('#main')!)
-} 
+
+
+
 // setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
