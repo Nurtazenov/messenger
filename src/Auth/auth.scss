@@ -54,15 +54,6 @@ a{
     margin: 15px 15px;
 }
 
-@keyframes shine {
-    0% {
-        background: linear-gradient(to bottom right, #45a847, #4caf50);
-    }
-    100% {
-        background: linear-gradient(to bottom right, #4caf50, #45a847);
-    }
-}
-
 #register-button{
     margin-left: 20%;
     position: relative;
